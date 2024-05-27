@@ -37,3 +37,33 @@ const questions = [
     ]
     },
 ]
+
+const questionElement = document.getElementById("question");
+const NextButton = document.getElementsByClassName("nxt-btn");
+const AnsButton = document.getElementsByClassName("ans-btn");
+
+
+let currQuestion= 0;
+let score= 0;
+
+
+function startQuiz(params) {
+    currQuestion=0;
+    score=0;
+    NextButton.innerHTML="Next";
+    showQuestion();
+}
+
+function showQuestion(params) {
+    let currQuestion=questions[currQuestion];
+    let questionNo= currQuestion+1;
+    questionElement.innerHTML=questionNo+". "+ currQuestion.question;
+
+    currQuestion.answers.forEach(answer => {
+        const button= document.createElement("button");
+        button.innerHTML= answer.text;
+        button.classList.add("btn");
+        AnsButton.appendChild(button)
+        
+    });
+}
