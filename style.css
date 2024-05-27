@@ -40,11 +40,14 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
-.btn:hover {
+.btn:hover:not([disabled]) {
   background: #222;
   color: #fff;
 }
-.nxt-btn {
+.btn:disabled {
+  cursor: no-drop;
+}
+#nxt-btn {
   background: #001e4d;
   color: #fff;
   font-weight: 500;
@@ -56,9 +59,9 @@ body {
   cursor: pointer;
   display: none;
 }
-.correct{
-    background: #9aeabc;
+.correct {
+  background: #9aeabc;
 }
-.incorrect{
-    background: #ff9393;
+.incorrect {
+  background: #ff9393;
 }
